@@ -1,0 +1,46 @@
+[
+  {
+    "user_name": "jdoe",
+    "arn": "arn:aws:iam::123456789012:user/jdoe",
+    "attached_policies": ["AdministratorAccess", "PowerUserAccess"],
+    "is_admin": true,
+    "password_enabled": true,
+    "password_last_used_days": 187,
+    "access_key_active": true,
+    "access_key_age_days": 391,
+    "mfa_enabled": false
+  },
+  {
+    "user_name": "asmith",
+    "arn": "arn:aws:iam::123456789012:user/asmith",
+    "attached_policies": ["ReadOnlyAccess", "IAMFullAccess"],
+    "is_admin": true,
+    "password_enabled": true,
+    "password_last_used_days": 94,
+    "access_key_active": false,
+    "access_key_age_days": null,
+    "mfa_enabled": false
+  },
+  {
+    "user_name": "bthomas",
+    "arn": "arn:aws:iam::123456789012:user/bthomas",
+    "attached_policies": ["PowerUserAccess"],
+    "is_admin": false,
+    "password_enabled": true,
+    "password_last_used_days": 3,
+    "access_key_active": true,
+    "access_key_age_days": 214,
+    "mfa_enabled": false
+  },
+  {
+    "user_name": "cnguyen",
+    "arn": "arn:aws:iam::123456789012:user/cnguyen",
+    "attached_policies": ["CustomAppDeployPolicy", "AdministratorAccess"],
+    "is_admin": true,
+    "password_enabled": true,
+    "password_last_used_days": 260,
+    "access_key_active": true,
+    "access_key_age_days": 620,
+    "mfa_enabled": false
+  }
+]

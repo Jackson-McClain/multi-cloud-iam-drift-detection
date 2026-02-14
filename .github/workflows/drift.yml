@@ -1,0 +1,46 @@
+name: IAM Drift Detection CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+
+jobs:
+  drift-detection:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    
+    - name: Run drift detection
+      run: |
+        python run.py
+    
+    - name: Upload drift reports
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: drift-reports
+        path: outputs/
+        retention-days: 30
+    
+    - name: Check for critical findings
+      run: |
+        if grep -q '"severity": "CRITICAL"' outputs/drift_report.json; then
+          echo "⚠️ CRITICAL findings detected!"
+          exit 1
+        fi

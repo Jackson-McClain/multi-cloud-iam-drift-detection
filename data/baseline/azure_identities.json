@@ -1,0 +1,42 @@
+[
+  {
+    "principal_id": "user-001",
+    "upn": "jdoe@corp.com",
+    "roles": ["User Administrator"],
+    "privileged": true,
+    "last_login_days": 3,
+    "password_expires_in_days": 45,
+    "password_complexity": "Strong",
+    "mfa_enabled": true
+  },
+  {
+    "principal_id": "user-002",
+    "upn": "asmith@corp.com",
+    "roles": ["Global Reader"],
+    "privileged": false,
+    "last_login_days": 12,
+    "password_expires_in_days": 72,
+    "password_complexity": "Strong",
+    "mfa_enabled": true
+  },
+  {
+    "principal_id": "user-003",
+    "upn": "bthomas@corp.com",
+    "roles": ["Application Administrator"],
+    "privileged": true,
+    "last_login_days": 1,
+    "password_expires_in_days": 60,
+    "password_complexity": "Strong",
+    "mfa_enabled": true
+  },
+  {
+    "principal_id": "user-004",
+    "upn": "cnguyen@corp.com",
+    "roles": ["User"],
+    "privileged": false,
+    "last_login_days": 8,
+    "password_expires_in_days": 90,
+    "password_complexity": "Strong",
+    "mfa_enabled": true
+  }
+]
